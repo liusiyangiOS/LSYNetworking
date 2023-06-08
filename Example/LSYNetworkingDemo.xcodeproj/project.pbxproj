@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D7B1B1029DBDAED00DDAF80 /* LSYBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0229DBDAED00DDAF80 /* LSYBaseRequest.m */; };
+		8D7B1B1129DBDAED00DDAF80 /* NSError+LSYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0329DBDAED00DDAF80 /* NSError+LSYNetworking.m */; };
+		8D7B1B1229DBDAED00DDAF80 /* LSYDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0629DBDAED00DDAF80 /* LSYDownloadRequest.m */; };
+		8D7B1B1329DBDAED00DDAF80 /* LSYRequestUploadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0B29DBDAED00DDAF80 /* LSYRequestUploadItem.m */; };
+		8D7B1B1429DBDAED00DDAF80 /* LSYUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0C29DBDAED00DDAF80 /* LSYUploadRequest.m */; };
+		8D7B1B1529DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B1B0D29DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.m */; };
+		8DE3930B28CB36F200C1FA90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3930A28CB36F200C1FA90 /* AppDelegate.m */; };
+		8DE3930E28CB36F200C1FA90 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3930D28CB36F200C1FA90 /* SceneDelegate.m */; };
+		8DE3931128CB36F200C1FA90 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3931028CB36F200C1FA90 /* ViewController.m */; };
+		8DE3931428CB36F200C1FA90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE3931228CB36F200C1FA90 /* Main.storyboard */; };
+		8DE3931628CB36F400C1FA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE3931528CB36F400C1FA90 /* Assets.xcassets */; };
+		8DE3931928CB36F400C1FA90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE3931728CB36F400C1FA90 /* LaunchScreen.storyboard */; };
+		8DE3931C28CB36F400C1FA90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3931B28CB36F400C1FA90 /* main.m */; };
+		8DE3932628CB36F400C1FA90 /* LSYNetworkingDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3932528CB36F400C1FA90 /* LSYNetworkingDemoTests.m */; };
+		8DE3933028CB36F400C1FA90 /* LSYNetworkingDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3932F28CB36F400C1FA90 /* LSYNetworkingDemoUITests.m */; };
+		8DE3933228CB36F400C1FA90 /* LSYNetworkingDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3933128CB36F400C1FA90 /* LSYNetworkingDemoUITestsLaunchTests.m */; };
+		8DF3BC4628E57D91001F8247 /* YourBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3BC4528E57D91001F8247 /* YourBaseRequest.m */; };
+		8DF3BC4928E57E1C001F8247 /* YourBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3BC4828E57E1C001F8247 /* YourBaseResponse.m */; };
+		8DF3BC4F28E5AAE0001F8247 /* XXXFriendListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3BC4E28E5AAE0001F8247 /* XXXFriendListRequest.m */; };
+		8DF3BC5228E5AAF5001F8247 /* XXXFriendInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3BC5128E5AAF5001F8247 /* XXXFriendInfoRequest.m */; };
+		8DF7A84B28E6872F00772D49 /* XXXFirendInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7A84A28E6872F00772D49 /* XXXFirendInfo.m */; };
+		8DF7A84D28E69DED00772D49 /* FriendsInfoList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DF7A84C28E69DED00772D49 /* FriendsInfoList.plist */; };
+		AA67023D98A6C311EC586246 /* Pods_LSYNetworkingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCAE4E44E63DF297E93C33A /* Pods_LSYNetworkingDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DE3932228CB36F400C1FA90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DE392FE28CB36F200C1FA90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DE3930528CB36F200C1FA90;
+			remoteInfo = LSYNetworkingDemo;
+		};
+		8DE3932C28CB36F400C1FA90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DE392FE28CB36F200C1FA90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DE3930528CB36F200C1FA90;
+			remoteInfo = LSYNetworkingDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D7B1B0229DBDAED00DDAF80 /* LSYBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYBaseRequest.m; sourceTree = "<group>"; };
+		8D7B1B0329DBDAED00DDAF80 /* NSError+LSYNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LSYNetworking.m"; sourceTree = "<group>"; };
+		8D7B1B0429DBDAED00DDAF80 /* LSYRequestDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYRequestDef.h; sourceTree = "<group>"; };
+		8D7B1B0529DBDAED00DDAF80 /* LSYRequestUploadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYRequestUploadItem.h; sourceTree = "<group>"; };
+		8D7B1B0629DBDAED00DDAF80 /* LSYDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYDownloadRequest.m; sourceTree = "<group>"; };
+		8D7B1B0729DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LSYPropertysToDictionary.h"; sourceTree = "<group>"; };
+		8D7B1B0829DBDAED00DDAF80 /* LSYUploadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYUploadRequest.h; sourceTree = "<group>"; };
+		8D7B1B0929DBDAED00DDAF80 /* LSYBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYBaseRequest.h; sourceTree = "<group>"; };
+		8D7B1B0A29DBDAED00DDAF80 /* NSError+LSYNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+LSYNetworking.h"; sourceTree = "<group>"; };
+		8D7B1B0B29DBDAED00DDAF80 /* LSYRequestUploadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYRequestUploadItem.m; sourceTree = "<group>"; };
+		8D7B1B0C29DBDAED00DDAF80 /* LSYUploadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYUploadRequest.m; sourceTree = "<group>"; };
+		8D7B1B0D29DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LSYPropertysToDictionary.m"; sourceTree = "<group>"; };
+		8D7B1B0E29DBDAED00DDAF80 /* LSYResponseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYResponseProtocol.h; sourceTree = "<group>"; };
+		8D7B1B0F29DBDAED00DDAF80 /* LSYDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYDownloadRequest.h; sourceTree = "<group>"; };
+		8DE3930628CB36F200C1FA90 /* LSYNetworkingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSYNetworkingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE3930928CB36F200C1FA90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8DE3930A28CB36F200C1FA90 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8DE3930C28CB36F200C1FA90 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		8DE3930D28CB36F200C1FA90 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		8DE3930F28CB36F200C1FA90 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8DE3931028CB36F200C1FA90 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8DE3931328CB36F200C1FA90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DE3931528CB36F400C1FA90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8DE3931828CB36F400C1FA90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DE3931A28CB36F400C1FA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DE3931B28CB36F400C1FA90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8DE3932128CB36F400C1FA90 /* LSYNetworkingDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSYNetworkingDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE3932528CB36F400C1FA90 /* LSYNetworkingDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYNetworkingDemoTests.m; sourceTree = "<group>"; };
+		8DE3932B28CB36F400C1FA90 /* LSYNetworkingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSYNetworkingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE3932F28CB36F400C1FA90 /* LSYNetworkingDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYNetworkingDemoUITests.m; sourceTree = "<group>"; };
+		8DE3933128CB36F400C1FA90 /* LSYNetworkingDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYNetworkingDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		8DF3BC4428E57D91001F8247 /* YourBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourBaseRequest.h; sourceTree = "<group>"; };
+		8DF3BC4528E57D91001F8247 /* YourBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourBaseRequest.m; sourceTree = "<group>"; };
+		8DF3BC4728E57E1C001F8247 /* YourBaseResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourBaseResponse.h; sourceTree = "<group>"; };
+		8DF3BC4828E57E1C001F8247 /* YourBaseResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourBaseResponse.m; sourceTree = "<group>"; };
+		8DF3BC4D28E5AAE0001F8247 /* XXXFriendListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXXFriendListRequest.h; sourceTree = "<group>"; };
+		8DF3BC4E28E5AAE0001F8247 /* XXXFriendListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXXFriendListRequest.m; sourceTree = "<group>"; };
+		8DF3BC5028E5AAF5001F8247 /* XXXFriendInfoRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXXFriendInfoRequest.h; sourceTree = "<group>"; };
+		8DF3BC5128E5AAF5001F8247 /* XXXFriendInfoRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXXFriendInfoRequest.m; sourceTree = "<group>"; };
+		8DF7A84928E6872F00772D49 /* XXXFirendInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXFirendInfo.h; sourceTree = "<group>"; };
+		8DF7A84A28E6872F00772D49 /* XXXFirendInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXFirendInfo.m; sourceTree = "<group>"; };
+		8DF7A84C28E69DED00772D49 /* FriendsInfoList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FriendsInfoList.plist; sourceTree = "<group>"; };
+		A372E70C29E8004C72B53FF0 /* Pods-LSYNetworkingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYNetworkingDemo.debug.xcconfig"; path = "Target Support Files/Pods-LSYNetworkingDemo/Pods-LSYNetworkingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B7BCEFA4D44B115C49E9256E /* Pods-LSYNetworkingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYNetworkingDemo.release.xcconfig"; path = "Target Support Files/Pods-LSYNetworkingDemo/Pods-LSYNetworkingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		EFCAE4E44E63DF297E93C33A /* Pods_LSYNetworkingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSYNetworkingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DE3930328CB36F200C1FA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA67023D98A6C311EC586246 /* Pods_LSYNetworkingDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3931E28CB36F400C1FA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3932828CB36F400C1FA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D7B1B0129DBDAED00DDAF80 /* LSYNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B1B0429DBDAED00DDAF80 /* LSYRequestDef.h */,
+				8D7B1B0E29DBDAED00DDAF80 /* LSYResponseProtocol.h */,
+				8D7B1B0529DBDAED00DDAF80 /* LSYRequestUploadItem.h */,
+				8D7B1B0B29DBDAED00DDAF80 /* LSYRequestUploadItem.m */,
+				8D7B1B0929DBDAED00DDAF80 /* LSYBaseRequest.h */,
+				8D7B1B0229DBDAED00DDAF80 /* LSYBaseRequest.m */,
+				8D7B1B0F29DBDAED00DDAF80 /* LSYDownloadRequest.h */,
+				8D7B1B0629DBDAED00DDAF80 /* LSYDownloadRequest.m */,
+				8D7B1B0829DBDAED00DDAF80 /* LSYUploadRequest.h */,
+				8D7B1B0C29DBDAED00DDAF80 /* LSYUploadRequest.m */,
+				8D7B1B0A29DBDAED00DDAF80 /* NSError+LSYNetworking.h */,
+				8D7B1B0329DBDAED00DDAF80 /* NSError+LSYNetworking.m */,
+				8D7B1B0729DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.h */,
+				8D7B1B0D29DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.m */,
+			);
+			path = LSYNetworking;
+			sourceTree = "<group>";
+		};
+		8DE392FD28CB36F200C1FA90 = {
+			isa = PBXGroup;
+			children = (
+				8DE3930828CB36F200C1FA90 /* LSYNetworkingDemo */,
+				8DE3932428CB36F400C1FA90 /* LSYNetworkingDemoTests */,
+				8DE3932E28CB36F400C1FA90 /* LSYNetworkingDemoUITests */,
+				8DE3930728CB36F200C1FA90 /* Products */,
+				F8EDAFD4782ACD2E2627B1B8 /* Pods */,
+				FA4D1197C786CF7F8F13BACC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8DE3930728CB36F200C1FA90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DE3930628CB36F200C1FA90 /* LSYNetworkingDemo.app */,
+				8DE3932128CB36F400C1FA90 /* LSYNetworkingDemoTests.xctest */,
+				8DE3932B28CB36F400C1FA90 /* LSYNetworkingDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DE3930828CB36F200C1FA90 /* LSYNetworkingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B1B0129DBDAED00DDAF80 /* LSYNetworking */,
+				8DF3BC4328E57D22001F8247 /* Example */,
+				8DE3930928CB36F200C1FA90 /* AppDelegate.h */,
+				8DE3930A28CB36F200C1FA90 /* AppDelegate.m */,
+				8DE3930C28CB36F200C1FA90 /* SceneDelegate.h */,
+				8DE3930D28CB36F200C1FA90 /* SceneDelegate.m */,
+				8DE3930F28CB36F200C1FA90 /* ViewController.h */,
+				8DE3931028CB36F200C1FA90 /* ViewController.m */,
+				8DE3931228CB36F200C1FA90 /* Main.storyboard */,
+				8DE3931528CB36F400C1FA90 /* Assets.xcassets */,
+				8DE3931728CB36F400C1FA90 /* LaunchScreen.storyboard */,
+				8DE3931A28CB36F400C1FA90 /* Info.plist */,
+				8DE3931B28CB36F400C1FA90 /* main.m */,
+			);
+			path = LSYNetworkingDemo;
+			sourceTree = "<group>";
+		};
+		8DE3932428CB36F400C1FA90 /* LSYNetworkingDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DE3932528CB36F400C1FA90 /* LSYNetworkingDemoTests.m */,
+			);
+			path = LSYNetworkingDemoTests;
+			sourceTree = "<group>";
+		};
+		8DE3932E28CB36F400C1FA90 /* LSYNetworkingDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8DE3932F28CB36F400C1FA90 /* LSYNetworkingDemoUITests.m */,
+				8DE3933128CB36F400C1FA90 /* LSYNetworkingDemoUITestsLaunchTests.m */,
+			);
+			path = LSYNetworkingDemoUITests;
+			sourceTree = "<group>";
+		};
+		8DF3BC4328E57D22001F8247 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				8DF3BC4428E57D91001F8247 /* YourBaseRequest.h */,
+				8DF3BC4528E57D91001F8247 /* YourBaseRequest.m */,
+				8DF3BC4728E57E1C001F8247 /* YourBaseResponse.h */,
+				8DF3BC4828E57E1C001F8247 /* YourBaseResponse.m */,
+				8DF3BC5028E5AAF5001F8247 /* XXXFriendInfoRequest.h */,
+				8DF3BC5128E5AAF5001F8247 /* XXXFriendInfoRequest.m */,
+				8DF3BC4D28E5AAE0001F8247 /* XXXFriendListRequest.h */,
+				8DF3BC4E28E5AAE0001F8247 /* XXXFriendListRequest.m */,
+				8DF7A84928E6872F00772D49 /* XXXFirendInfo.h */,
+				8DF7A84A28E6872F00772D49 /* XXXFirendInfo.m */,
+				8DF7A84C28E69DED00772D49 /* FriendsInfoList.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		F8EDAFD4782ACD2E2627B1B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A372E70C29E8004C72B53FF0 /* Pods-LSYNetworkingDemo.debug.xcconfig */,
+				B7BCEFA4D44B115C49E9256E /* Pods-LSYNetworkingDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA4D1197C786CF7F8F13BACC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFCAE4E44E63DF297E93C33A /* Pods_LSYNetworkingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DE3930528CB36F200C1FA90 /* LSYNetworkingDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DE3933528CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemo" */;
+			buildPhases = (
+				0923EE7E839514B30FF852B3 /* [CP] Check Pods Manifest.lock */,
+				8DE3930228CB36F200C1FA90 /* Sources */,
+				8DE3930328CB36F200C1FA90 /* Frameworks */,
+				8DE3930428CB36F200C1FA90 /* Resources */,
+				5F57822BD53935AA5B381593 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LSYNetworkingDemo;
+			productName = LSYNetworkingDemo;
+			productReference = 8DE3930628CB36F200C1FA90 /* LSYNetworkingDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DE3932028CB36F400C1FA90 /* LSYNetworkingDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DE3933828CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemoTests" */;
+			buildPhases = (
+				8DE3931D28CB36F400C1FA90 /* Sources */,
+				8DE3931E28CB36F400C1FA90 /* Frameworks */,
+				8DE3931F28CB36F400C1FA90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DE3932328CB36F400C1FA90 /* PBXTargetDependency */,
+			);
+			name = LSYNetworkingDemoTests;
+			productName = LSYNetworkingDemoTests;
+			productReference = 8DE3932128CB36F400C1FA90 /* LSYNetworkingDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8DE3932A28CB36F400C1FA90 /* LSYNetworkingDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DE3933B28CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemoUITests" */;
+			buildPhases = (
+				8DE3932728CB36F400C1FA90 /* Sources */,
+				8DE3932828CB36F400C1FA90 /* Frameworks */,
+				8DE3932928CB36F400C1FA90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DE3932D28CB36F400C1FA90 /* PBXTargetDependency */,
+			);
+			name = LSYNetworkingDemoUITests;
+			productName = LSYNetworkingDemoUITests;
+			productReference = 8DE3932B28CB36F400C1FA90 /* LSYNetworkingDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DE392FE28CB36F200C1FA90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					8DE3930528CB36F200C1FA90 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					8DE3932028CB36F400C1FA90 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 8DE3930528CB36F200C1FA90;
+					};
+					8DE3932A28CB36F400C1FA90 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 8DE3930528CB36F200C1FA90;
+					};
+				};
+			};
+			buildConfigurationList = 8DE3930128CB36F200C1FA90 /* Build configuration list for PBXProject "LSYNetworkingDemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DE392FD28CB36F200C1FA90;
+			productRefGroup = 8DE3930728CB36F200C1FA90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DE3930528CB36F200C1FA90 /* LSYNetworkingDemo */,
+				8DE3932028CB36F400C1FA90 /* LSYNetworkingDemoTests */,
+				8DE3932A28CB36F400C1FA90 /* LSYNetworkingDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DE3930428CB36F200C1FA90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE3931928CB36F400C1FA90 /* LaunchScreen.storyboard in Resources */,
+				8DE3931628CB36F400C1FA90 /* Assets.xcassets in Resources */,
+				8DF7A84D28E69DED00772D49 /* FriendsInfoList.plist in Resources */,
+				8DE3931428CB36F200C1FA90 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3931F28CB36F400C1FA90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3932928CB36F400C1FA90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0923EE7E839514B30FF852B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LSYNetworkingDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F57822BD53935AA5B381593 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LSYNetworkingDemo/Pods-LSYNetworkingDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LSYNetworkingDemo/Pods-LSYNetworkingDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LSYNetworkingDemo/Pods-LSYNetworkingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DE3930228CB36F200C1FA90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7B1B1229DBDAED00DDAF80 /* LSYDownloadRequest.m in Sources */,
+				8D7B1B1129DBDAED00DDAF80 /* NSError+LSYNetworking.m in Sources */,
+				8DE3931128CB36F200C1FA90 /* ViewController.m in Sources */,
+				8DE3930B28CB36F200C1FA90 /* AppDelegate.m in Sources */,
+				8DE3931C28CB36F400C1FA90 /* main.m in Sources */,
+				8D7B1B1429DBDAED00DDAF80 /* LSYUploadRequest.m in Sources */,
+				8D7B1B1329DBDAED00DDAF80 /* LSYRequestUploadItem.m in Sources */,
+				8DF3BC5228E5AAF5001F8247 /* XXXFriendInfoRequest.m in Sources */,
+				8DF7A84B28E6872F00772D49 /* XXXFirendInfo.m in Sources */,
+				8DF3BC4928E57E1C001F8247 /* YourBaseResponse.m in Sources */,
+				8DF3BC4628E57D91001F8247 /* YourBaseRequest.m in Sources */,
+				8D7B1B1029DBDAED00DDAF80 /* LSYBaseRequest.m in Sources */,
+				8D7B1B1529DBDAED00DDAF80 /* NSObject+LSYPropertysToDictionary.m in Sources */,
+				8DF3BC4F28E5AAE0001F8247 /* XXXFriendListRequest.m in Sources */,
+				8DE3930E28CB36F200C1FA90 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3931D28CB36F400C1FA90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE3932628CB36F400C1FA90 /* LSYNetworkingDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE3932728CB36F400C1FA90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE3933228CB36F400C1FA90 /* LSYNetworkingDemoUITestsLaunchTests.m in Sources */,
+				8DE3933028CB36F400C1FA90 /* LSYNetworkingDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DE3932328CB36F400C1FA90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DE3930528CB36F200C1FA90 /* LSYNetworkingDemo */;
+			targetProxy = 8DE3932228CB36F400C1FA90 /* PBXContainerItemProxy */;
+		};
+		8DE3932D28CB36F400C1FA90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DE3930528CB36F200C1FA90 /* LSYNetworkingDemo */;
+			targetProxy = 8DE3932C28CB36F400C1FA90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8DE3931228CB36F200C1FA90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DE3931328CB36F200C1FA90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DE3931728CB36F400C1FA90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DE3931828CB36F400C1FA90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DE3933328CB36F400C1FA90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8DE3933428CB36F400C1FA90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DE3933628CB36F400C1FA90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A372E70C29E8004C72B53FF0 /* Pods-LSYNetworkingDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A4HBD286L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LSYNetworkingDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8DE3933728CB36F400C1FA90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7BCEFA4D44B115C49E9256E /* Pods-LSYNetworkingDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A4HBD286L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LSYNetworkingDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8DE3933928CB36F400C1FA90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LSYNetworkingDemo.app/LSYNetworkingDemo";
+			};
+			name = Debug;
+		};
+		8DE3933A28CB36F400C1FA90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LSYNetworkingDemo.app/LSYNetworkingDemo";
+			};
+			name = Release;
+		};
+		8DE3933C28CB36F400C1FA90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LSYNetworkingDemo;
+			};
+			name = Debug;
+		};
+		8DE3933D28CB36F400C1FA90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lsy.LSYNetworkingDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LSYNetworkingDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DE3930128CB36F200C1FA90 /* Build configuration list for PBXProject "LSYNetworkingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE3933328CB36F400C1FA90 /* Debug */,
+				8DE3933428CB36F400C1FA90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DE3933528CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE3933628CB36F400C1FA90 /* Debug */,
+				8DE3933728CB36F400C1FA90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DE3933828CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE3933928CB36F400C1FA90 /* Debug */,
+				8DE3933A28CB36F400C1FA90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DE3933B28CB36F400C1FA90 /* Build configuration list for PBXNativeTarget "LSYNetworkingDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE3933C28CB36F400C1FA90 /* Debug */,
+				8DE3933D28CB36F400C1FA90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DE392FE28CB36F200C1FA90 /* Project object */;
+}
