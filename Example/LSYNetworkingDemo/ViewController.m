@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIButton *requestInfoButton = [self newButtonWithTitle:@"请求friend info" action:@selector(requestInfoButtonClicked)];
     requestInfoButton.frame = CGRectMake(20, 100, 150, 30);
     [self.view addSubview:requestInfoButton];
