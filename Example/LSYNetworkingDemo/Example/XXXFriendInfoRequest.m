@@ -21,6 +21,7 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
         [self addExtraParamsWithDictionary:@{
             @"osVersion":@"iOS 14.0.1"
         }];
+        self.usePost = NO;
     }
     return self;
 }
@@ -56,7 +57,7 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
 #pragma mark - LSYPropertysToDictionaryProtocol
 
 - (Class)propertysDictionaryUntilClass{
-    //这里的意思是,除了本类中定义的属性friendId和osVersion,父类中的所有属性也要作为key-value添加到请求参数的dictionary当中
+    //这里的意思是,除了本类中定义的属性friendId,父类中的所有属性也要作为key-value添加到请求参数的dictionary当中
     return self.superclass;
 }
 
@@ -67,7 +68,9 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
 
 + (nullable NSArray<NSString *> *)propertyBlacklist{
     //这里表示,errorType这个属性不作为请求参数添加到参数dictionary中
-    return @[@"errorType"];
+    NSMutableArray *blackList = @[@"errorType"].mutableCopy;
+    [blackList addObjectsFromArray:[super propertyBlacklist]];
+    return blackList;
 }
 
 @end

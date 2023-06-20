@@ -20,7 +20,7 @@
     if (self) {
         //设置你的host
         self.host = @"https://api.lsy.com";
-        //添加公共参数
+        //添加公共请求参数
         [self addExtraParamsWithDictionary:@{
             @"userId":@"11111111111"
         }];
