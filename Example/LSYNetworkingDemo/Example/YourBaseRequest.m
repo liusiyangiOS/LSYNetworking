@@ -78,7 +78,7 @@
     NSLog(@"Response:%@\n----------",response);
     //这里可以对response进行解密
     
-    //缓存不需要解密,缓存不需要缓存
+    //缓存不需要解密
     if (_isCachedResponse) {
         return [[YourBaseResponse alloc] initWithResponse:response];
     }

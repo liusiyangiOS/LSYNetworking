@@ -37,7 +37,8 @@ LSYNetworking对网络请求的过程进行了抽象,可应对各种复杂的业
 
 ## 使用教程
 
-* [LSYNetworking，一款基于AFN的网络请求库-基础篇](https://www.jianshu.com/p/d13e601fcf40?v=1687265889302)
+* [LSYNetworking，一款基于AFN的网络请求库-基础篇](https://www.jianshu.com/p/d13e601fcf40)
+* [LSYNetworking，一款基于AFN的网络请求库-进阶篇](https://www.jianshu.com/p/9097617a924a)
 * [作者博客](https://www.jianshu.com/u/e1fee33c72bc)
 
 ## 协议

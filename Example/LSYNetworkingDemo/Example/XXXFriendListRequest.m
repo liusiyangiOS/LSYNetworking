@@ -39,7 +39,7 @@
 - (void)requestSuccessWithResponseObject:(id<LSYResponseProtocol>)response task:(nonnull NSURLSessionTask *)task{
     NSArray<XXXFirendInfo *> *firendList = response.result;
     //这里可以对firendList进行一些处理,如排序操作,写在这里可以避免每次请求都需要在请求回调里写相同的排序逻辑
-    firendList = firendList.copy;
+    response.result = firendList.copy;//假设这是排序操作
 }
 
 @end
