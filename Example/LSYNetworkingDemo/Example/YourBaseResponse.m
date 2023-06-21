@@ -15,15 +15,31 @@
 
 #pragma mark - LSYResponseProtocol
 
-+ (NSString *)resultKey{
-    return @"result";
+- (instancetype)initWithEncryptedResponse:(id)response{
+    response = [response copy];//假装这是解密操作
+    return [self initWithResponse:response];
+}
+
+- (instancetype)initWithResultEncryptedResponse:(id)response{
+    self = [self initWithResponse:response];
+    //对result进行解密
+    self.result = [self.result copy];//假装这是解密操作
+    //因为有可能涉及到缓存Response,所以需要在result解密后,将Response的result替换为解密后的数据
+    NSMutableDictionary *decryptResponse = [_responseJson mutableCopy];
+    if (!_result) {
+        [decryptResponse removeObjectForKey:@"result"];
+    }else{
+        [decryptResponse setObject:_result forKey:@"result"];
+    }
+    _responseJson = decryptResponse.copy;
+    return self;
 }
 
 - (instancetype)initWithResponse:(id)response{
     self = [super init];
     if (self) {
         /*
-         根据你们公司response的结构进行赋值,如:
+         根据response的结构进行赋值,如:
          {
             "resultcode" = 200,
             "resultmsg" = "请求成功!",
@@ -36,21 +52,11 @@
          */
         _code = [[response objectForKey:@"resultcode"] integerValue];
         _msg = [response objectForKey:@"resultmsg"];
-        _result = [response objectForKey:[self.class resultKey]];
+        _result = [response objectForKey:@"result"];
         
         _responseJson = response;
     }
     return self;
-}
-
-- (void)updateResponseJsonObject{
-    NSMutableDictionary *decryptResponse = [_responseJson mutableCopy];
-    if (!_result) {
-        [decryptResponse removeObjectForKey:[YourBaseResponse resultKey]];
-    }else{
-        [decryptResponse setObject:_result forKey:[YourBaseResponse resultKey]];
-    }
-    _responseJson = decryptResponse.copy;
 }
 
 - (BOOL)isRequestSuccess{

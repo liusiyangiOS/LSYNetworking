@@ -83,29 +83,22 @@
         return [[YourBaseResponse alloc] initWithResponse:response];
     }
     
-    YourBaseResponse *res = nil;
     if (_needDecryptResponse) {
         //如果是对整个response进行加密的情况
-        //对response进行解密
         //顺便一说,如果是对整个response进行加密,那么responseType一定需要是http
-        response = [response copy];//假装这是解密操作
-        res = [[YourBaseResponse alloc] initWithResponse:response];
+        return [[YourBaseResponse alloc] initWithEncryptedResponse:response];
     }else {
         //如果是xml的response,需要进行xml解析
         if ([response isKindOfClass:NSXMLParser.class]) {
             response = [NSDictionary dictionaryWithXMLParser:response];
         }
-        res = [[YourBaseResponse alloc] initWithResponse:response];
         if (_needDecryptResult){
             //如果是对result进行加密的情况
-            //对result进行解密
-            res.result = [res.result copy];//假装这是解密操作
-            
-            //因为有可能涉及到缓存Response,所以需要在result解密后,将Response的result替换为解密后的数据
-            [res updateResponseJsonObject];
+            return [[YourBaseResponse alloc] initWithResultEncryptedResponse:response];
         }
+        //不需要解密
+        return [[YourBaseResponse alloc] initWithResponse:response];
     }
-    return res;
 }
 
 - (void)requestSuccessWithResponseObject:(id<LSYResponseProtocol>)response task:(nonnull NSURLSessionTask *)task{
