@@ -57,6 +57,13 @@
     return nil;
 }
 
+-(LSYResponseSerializerType)responseType{
+    if (_needDecryptResponse) {
+        return LSYResponseSerializerTypeHTTP;
+    }
+    return LSYResponseSerializerTypeJSON;
+}
+
 - (NSDictionary *)handleParams:(NSDictionary *)params{
     NSLog(@"----------\nRequest url:%@\nParam:%@\n",self.url,params);
     //这里可以对参数进行加密
