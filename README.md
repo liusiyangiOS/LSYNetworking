@@ -1,6 +1,8 @@
 # LSYNetworking
 
-![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+[![License MIT](https://img.shields.io/cocoapods/l/LSYNetworking)](https://www.apache.org/licenses/LICENSE-2.0.html)
+![Pod version](https://img.shields.io/cocoapods/v/LSYNetworking)
+
 
 LSYNetworking是基于 [AFNetworking][AFNetworking] 封装的iOS网络库，实现了对其的高度封装和对网络请求的高度抽象。
 
