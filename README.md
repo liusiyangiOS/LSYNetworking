@@ -33,9 +33,9 @@ LSYNetworking对网络请求的过程进行了抽象,可应对各种复杂的业
 
 ## 安装要求
 
-| LSYNetworking 版本 | AFNetworking 版本 | 最低 iOS Target | 最低 macOS Target | 最低 watchOS Target | 最低 tvOS Target |       注意       |
-| :---------------: | :---------------: | :------------: | :--------------: | :----------------: | :-------------: | :--------------: |
-|       1.x         |        4.x        |     iOS 9      |   macOS 10.10    |    watchOS 2.0     |    tvOS 9.0     | 要求 Xcode 11 以上 |
+| LSYNetworking 版本 | AFNetworking 版本 | 最低 iOS Target |        注意       |
+| :---------------: | :---------------: | :------------: | :--------------: |
+|       1.x         |        4.x        |     iOS 9      | 要求 Xcode 11 以上 |
 
 
 ## 使用教程
