@@ -27,10 +27,6 @@ LSYNetworking对网络请求的过程进行了抽象,可应对各种复杂的业
 
     pod 'LSYNetworking' ~> 1.0
 
-在 Cartfile 中加入下面的代码以使用 LSYNetworking
-
-    github "liusiyangiOS/LSYNetworking" ~> 1.0
-
 ## 安装要求
 
 | LSYNetworking 版本 | AFNetworking 版本 | 最低 iOS Target |        注意       |
