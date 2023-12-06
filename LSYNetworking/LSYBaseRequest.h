@@ -16,6 +16,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/** 请求的HTTPMethod */
+typedef NS_ENUM(NSUInteger, LSYRequestMethodType) {
+    LSYRequestMethodTypePOST    = 0,
+    LSYRequestMethodTypeGET     = 1,
+    LSYRequestMethodTypeHEAD    = 2,
+    LSYRequestMethodTypePUT     = 3,
+    LSYRequestMethodTypePATCH   = 4,
+    LSYRequestMethodTypeDELETE  = 5,
+};
+
 /** 网络请求格式化器 */
 typedef NS_ENUM(NSUInteger, LSYRequestSerializerType) {
     LSYRequestSerializerTypeHTTP         = 0, /*!< NSData格式 */
@@ -77,9 +87,9 @@ typedef NS_ENUM(NSUInteger, LSYResponseSerializerType) {
 
 /**
  请求成功回调,子类可以重写此方法来实现一些功能,如数据缓存,请求记录存储等,主线程调用
- @param response 将返回结果的data转化成model之后的response
+ @param response 将返回结果的data转化成model之后的response,当HTTPMethod为LSYRequestMethodTypeHEAD的时候,该值为空
  */
-- (void)requestSuccessWithResponseObject:(id<LSYResponseProtocol>)response task:(NSURLSessionTask *)task;
+- (void)requestSuccessWithResponseObject:(nullable id<LSYResponseProtocol>)response task:(NSURLSessionTask *)task;
 
 /**
  请求失败回调,子类可以重写此方法来对错误进行统一的处理,主线程调用
@@ -91,11 +101,8 @@ typedef NS_ENUM(NSUInteger, LSYResponseSerializerType) {
 
 @interface LSYBaseRequest : NSObject <LSYBaseRequest,LSYPropertysToDictionaryProtocol>
 
-/**
- 是否使用POST请求,默认YES
- YES:POST请求,NO:GET请求
- */
-@property (assign, nonatomic) BOOL usePost;
+/** 请求的HTTPMethod,默认Post */
+@property (assign, nonatomic) LSYRequestMethodType method;
 
 @property (copy, nonatomic) NSString *host;
 @property (copy, nonatomic) NSString *apiName;
