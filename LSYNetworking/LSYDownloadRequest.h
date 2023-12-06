@@ -23,12 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, readonly) NSURLSessionDownloadTask *task;
 
 /** 下载文件,实现了断点续传功能 */
-- (void)startRequestWithProgressBlock:(nullable LSYRequestProgressBlock)progressBlock
-                         successBlock:(nullable LSYRequestSuccessBlock)successBlock
-                         failureBlock:(nullable LSYRequestFailBlock)failureBlock;
+- (void)startWithProgressBlock:(nullable LSYRequestProgressBlock)progressBlock
+                  successBlock:(nullable LSYRequestSuccessBlock)successBlock
+                  failureBlock:(nullable LSYRequestFailBlock)failureBlock;
 
 /** 取消请求请务必调用此方法取消,因为此方法内部实现了断点续传逻辑 */
-- (void)cancelRequest;
+- (void)cancel;
 
 @end
 

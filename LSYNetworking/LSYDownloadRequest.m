@@ -10,9 +10,17 @@
 
 @implementation LSYDownloadRequest
 
-- (void)startRequestWithProgressBlock:(nullable LSYRequestProgressBlock)progressBlock
-                         successBlock:(nullable LSYRequestSuccessBlock)successBlock
-                         failureBlock:(nullable LSYRequestFailBlock)failureBlock {
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        //
+    }
+    return self;
+}
+
+- (void)startWithProgressBlock:(nullable LSYRequestProgressBlock)progressBlock
+                  successBlock:(nullable LSYRequestSuccessBlock)successBlock
+                  failureBlock:(nullable LSYRequestFailBlock)failureBlock {
     if (!_url) {
         return;
     }
@@ -78,7 +86,7 @@
     }
 }
 
-- (void)cancelRequest {
+- (void)cancel {
     [_task cancelByProducingResumeData:^(NSData * _Nullable resumeData) {}];
 }
 
