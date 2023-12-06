@@ -101,7 +101,7 @@
     }
 }
 
-- (void)requestSuccessWithResponseObject:(id<LSYResponseProtocol>)response task:(nonnull NSURLSessionTask *)task{
+- (void)requestSuccessWithResponseObject:(nullable id<LSYResponseProtocol>)response task:(nonnull NSURLSessionTask *)task{
     //可以在这里处理缓存逻辑
     YourBaseResponse *res = response;
     if(_shouldCache && !_isCachedResponse) {

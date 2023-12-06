@@ -21,7 +21,7 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
         [self addExtraParamsWithDictionary:@{
             @"osVersion":@"iOS 14.0.1"
         }];
-        self.usePost = NO;
+        self.method = LSYRequestMethodTypeGET;
     }
     return self;
 }

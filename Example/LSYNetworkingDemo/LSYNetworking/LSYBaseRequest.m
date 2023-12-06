@@ -33,7 +33,6 @@ static dispatch_queue_t processing_queue() {
 - (instancetype)init{
     self = [super init];
     if (self) {
-        _usePost = YES;
         _taskDic = [NSMutableDictionary dictionaryWithCapacity:1];
     }
     return self;
@@ -102,18 +101,48 @@ static dispatch_queue_t processing_queue() {
         }
         
         NSURLSessionTask *task = nil;
-        if ([self usePost]) {
-            task = [self.manager POST:encodeURL parameters:params headers:[self httpRequestHeaders] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleResponse:responseObject withToken:token successBlock:successBlock failureBlock:failureBlock];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self _handleError:error withToken:token successBlock:successBlock failureBlock:failureBlock];
-            }];
-        }else{
-            task = [self.manager GET:encodeURL parameters:params headers:[self httpRequestHeaders] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleResponse:responseObject withToken:token successBlock:successBlock failureBlock:failureBlock];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self _handleError:error withToken:token successBlock:successBlock failureBlock:failureBlock];
-            }];
+        void (^ success)(NSURLSessionDataTask * _Nonnull, id _Nullable) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self handleResponse:responseObject withToken:token successBlock:successBlock failureBlock:failureBlock];
+        };
+        void (^ failure)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [self _handleError:error withToken:token successBlock:successBlock failureBlock:failureBlock];
+        };
+        switch (_method) {
+            case LSYRequestMethodTypeGET:{
+                task = [self.manager GET:encodeURL parameters:params headers:[self httpRequestHeaders] progress:nil success:success failure:failure];
+            }
+                break;
+            case LSYRequestMethodTypeHEAD:{
+                task = [self.manager HEAD:encodeURL parameters:params headers:[self httpRequestHeaders] success:^(NSURLSessionDataTask * _Nonnull task) {
+                    if ([self respondsToSelector:@selector(requestSuccessWithResponseObject:task:)]) {
+                        [self requestSuccessWithResponseObject:nil task:_taskDic[token]];
+                    }
+                    if (successBlock) {
+                        successBlock(nil);
+                    }
+                    if (token) {
+                        [_taskDic removeObjectForKey:token];
+                    }
+                } failure:failure];
+            }
+                break;
+            case LSYRequestMethodTypePUT:{
+                task = [self.manager PUT:encodeURL parameters:params headers:[self httpRequestHeaders] success:success failure:failure];
+            }
+                break;
+            case LSYRequestMethodTypePATCH:{
+                task = [self.manager PATCH:encodeURL parameters:params headers:[self httpRequestHeaders] success:success failure:failure];
+            }
+                break;
+            case LSYRequestMethodTypeDELETE:{
+                task = [self.manager DELETE:encodeURL parameters:params headers:[self httpRequestHeaders] success:success failure:failure];
+            }
+                break;
+                
+            default:{
+                task = [self.manager POST:encodeURL parameters:params headers:[self httpRequestHeaders] progress:nil success:success failure:failure];
+            }
+                break;
         }
         if (task) {
             [_taskDic setObject:task forKey:token];
