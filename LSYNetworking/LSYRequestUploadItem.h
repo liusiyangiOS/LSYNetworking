@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 上传文件/图片时对应文件/图片的key */
 @property (copy, nonatomic) NSString *key;
+/**
+ 文件名,可不填写,也可指定,当多个item对应同一个key的时候,则需要手动填写不同的文件名来作区分
+ LSYRequestUploadFile:默认是filePath中的文件名
+ LSYRequestUploadData:默认用key作为文件名,但是这样的文件名是没有拓展名的,因此建议填写
+ LSYRequestUploadImage:默认是key的值拼接.jpg拓展
+ */
+@property (copy, nonatomic) NSString *fileName;
 
 @end
 
@@ -30,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) NSString *mimeType;
 
 @property (strong, nonatomic) NSData *fileData;
-
-@property (copy, nonatomic) NSString *fileName;
 
 @end
 

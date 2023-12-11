@@ -172,29 +172,37 @@ static dispatch_queue_t processing_queue() {
         NSURLSessionDataTask *task = [self.manager POST:encodeURL parameters:params headers:[self httpRequestHeaders] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [items enumerateObjectsUsingBlock:^(LSYRequestUploadItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj isKindOfClass:LSYRequestUploadImage.class]) {
+                    if (!obj.fileName.length) {
+                        obj.fileName = [NSString stringWithFormat:@"%@.jpg", obj.key];
+                    }
                     LSYRequestUploadImage *imageObj = (LSYRequestUploadImage *)obj;
                     [formData appendPartWithFileData:UIImageJPEGRepresentation(imageObj.image, 1.f)
                                                 name:obj.key
-                                            fileName:[NSString stringWithFormat:@"%@.jpg", obj.key]
+                                            fileName:obj.fileName
                                             mimeType:@"image/jpeg"];
                 }else if ([obj isKindOfClass:LSYRequestUploadData.class]){
+                    if (!obj.fileName.length) {
+                        obj.fileName = obj.key;
+                    }
                     LSYRequestUploadData *dataObj = (LSYRequestUploadData *)obj;
                     [formData appendPartWithFileData:dataObj.fileData
                                                 name:obj.key
-                                            fileName:dataObj.fileName
+                                            fileName:obj.fileName
                                             mimeType:dataObj.mimeType];
                 } else {
                     NSAssert([obj isKindOfClass:LSYRequestUploadFile.class], @"item should be a kind of LSYRequestUploadItem class");
                     LSYRequestUploadFile *fileObj = (LSYRequestUploadFile *)obj;
                     NSAssert(fileObj.mimeType.length != 0, @"mimeType is nil");
                     NSURL *fileURL = [NSURL fileURLWithPath:fileObj.filePath];
-                    NSString *fileName = [fileURL lastPathComponent];
-                    if (!fileName) {
-                        fileName = obj.key;
+                    if (!obj.fileName.length) {
+                        obj.fileName = [fileURL lastPathComponent];
+                        if (!obj.fileName.length) {
+                            obj.fileName = obj.key;
+                        }
                     }
                     [formData appendPartWithFileURL:fileURL
                                                name:obj.key
-                                           fileName:fileName
+                                           fileName:obj.fileName
                                            mimeType:fileObj.mimeType
                                               error:nil];
                 }
