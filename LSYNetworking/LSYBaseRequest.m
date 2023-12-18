@@ -7,9 +7,8 @@
 //
 
 #import "LSYBaseRequest.h"
-#import <AFNetworking/AFNetworking.h>
 
-static dispatch_queue_t processing_queue() {
+static dispatch_queue_t processing_queue(void) {
     static dispatch_queue_t request_processing_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

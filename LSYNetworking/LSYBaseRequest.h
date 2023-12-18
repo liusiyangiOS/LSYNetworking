@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 #import "LSYResponseProtocol.h"
 #import "NSError+LSYNetworking.h"
 #import "NSObject+LSYPropertysToDictionary.h"
 #import "LSYRequestUploadItem.h"
 #import "LSYRequestDef.h"
-@class AFSecurityPolicy,AFHTTPRequestSerializer,AFHTTPResponseSerializer;
 
 NS_ASSUME_NONNULL_BEGIN
 
