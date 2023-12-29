@@ -12,8 +12,9 @@
 #import "YourAccountManager.h"
 #import "XXXTokenUpdateRequest.h"
 
-NSInteger const LSYNetworkNeedAuthenticationErrorCode = -200;
 NSInteger const LSYNetworkTokenExpiredErrorCode = -100;
+NSInteger const LSYNetworkNeedAuthenticationErrorCode = -200;
+NSInteger const LSYNetworkBadAccountErrorCode = -300;
 
 @implementation YourBaseRequest{
     //当前response是否是缓存
@@ -145,6 +146,15 @@ NSInteger const LSYNetworkTokenExpiredErrorCode = -100;
                 //用新的token重新请求
                 [self startRequestWithSuccessBlock:successBlock failureBlock:failureBlock];
             } failureBlock:failureBlock];
+            return NO;
+        }else if (error.code == LSYNetworkNeedAuthenticationErrorCode){
+            NSDictionary *extraInfo = error.extraInfo;
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:extraInfo[@"title"] message:extraInfo[@"content"] preferredStyle:UIAlertControllerStyleAlert];
+            [alertC addAction:[UIAlertAction actionWithTitle:@"点击验证" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                //验证通过,重新请求
+                [self startRequestWithSuccessBlock:successBlock failureBlock:failureBlock];
+            }]];
+            [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:alertC animated:YES completion:nil];
             return NO;
         }
     }else{

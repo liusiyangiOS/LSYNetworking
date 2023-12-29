@@ -66,7 +66,7 @@
     request.friendId = _requestCount;
     if (_requestCount == 0) {
         request.errorType = 2;
-    }else if (_requestCount > 6){
+    }else if (_requestCount > 3){
         request.errorType = 1;
     }
     [request startRequestWithSuccessBlock:^(XXXFirendInfo *responseData) {
@@ -75,7 +75,7 @@
         NSLog(@"Request failed:%@",error);
         //如果想要区分error是业务逻辑的error还是HTTP的error,用isBusinessError这个字段来判断
         if (error.isBusinessError) {
-            if (error.code == LSYNetworkNeedAuthenticationErrorCode) {
+            if (error.code == LSYNetworkBadAccountErrorCode) {
                 //获取后台返回的其他信息进行处理
                 //NSDictionary *extraInfo = error.extraInfo;
             }
@@ -83,7 +83,7 @@
     }];
     
     _requestCount ++;
-    if (_requestCount > 7) {
+    if (_requestCount > 4) {
         _requestCount = 0;
     }
 }

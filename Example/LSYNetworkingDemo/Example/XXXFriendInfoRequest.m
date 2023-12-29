@@ -35,6 +35,8 @@
             @"resultcode":@(LSYNetworkNeedAuthenticationErrorCode),
             @"resultmsg":@"您的请求过于频繁,请进行身份验证!",
             @"result":@{
+                @"title":@"您的请求过于频繁",
+                @"content":@"您的请求过于频繁,请进行身份验证!",
                 @"authenticationUrl":@"https://www.lsy.com/account/authentication.html"
             }
         };
