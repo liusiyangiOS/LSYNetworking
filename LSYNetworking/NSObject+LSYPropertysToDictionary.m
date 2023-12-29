@@ -1,9 +1,8 @@
 //
 //  NSObject+LSYPropertysToDictionary.m
-//  bangjob
+//  LSYNetworkingDemo
 //
 //  Created by 刘思洋 on 2022/7/20.
-//  Copyright © 2022 com.58. All rights reserved.
 //
 
 #import "NSObject+LSYPropertysToDictionary.h"
