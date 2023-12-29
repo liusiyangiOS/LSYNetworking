@@ -8,8 +8,6 @@
 #import "XXXFriendInfoRequest.h"
 #import "XXXFirendInfo.h"
 
-NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
-
 @implementation XXXFriendInfoRequest
 
 - (instancetype)init
@@ -31,8 +29,8 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
 }
 
 -(id)responseDataSource{
-    NSArray *friendList = [NSArray arrayWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"FriendsInfoList" ofType:@"plist"]];
     if (self.errorType == 1) {
+        self.errorType = 0;
         return @{
             @"resultcode":@(LSYNetworkNeedAuthenticationErrorCode),
             @"resultmsg":@"您的请求过于频繁,请进行身份验证!",
@@ -41,6 +39,14 @@ NSInteger const LSYNetworkNeedAuthenticationErrorCode = 302302;
             }
         };
     }
+    if (self.errorType == 2){
+        self.errorType = 0;
+        return @{
+            @"resultcode":@(LSYNetworkTokenExpiredErrorCode),
+            @"resultmsg":@"token已过期!",
+        };
+    }
+    NSArray *friendList = [NSArray arrayWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"FriendsInfoList" ofType:@"plist"]];
     if (self.friendId > friendList.count - 1) {
         return @{
             @"resultcode":@(300300),

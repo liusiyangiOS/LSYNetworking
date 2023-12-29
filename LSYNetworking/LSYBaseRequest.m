@@ -301,10 +301,11 @@ static dispatch_queue_t processing_queue(void) {
 }
 
 - (void)_handleError:(NSError *)error withToken:(NSString *)token successBlock:(_Nullable LSYRequestSuccessBlock)successBlock failureBlock:(LSYRequestFailBlock)failureBlock{
+    BOOL callBlock = YES;
     if ([self respondsToSelector:@selector(requestFailedWithError:task:successBlock:failureBlock:)]) {
-        [self requestFailedWithError:error task:_taskDic[token] successBlock:successBlock failureBlock:failureBlock];
+        callBlock = [self requestFailedWithError:error task:_taskDic[token] successBlock:successBlock failureBlock:failureBlock];
     }
-    if (failureBlock) {
+    if (callBlock && failureBlock) {
         failureBlock(error);
     }
     if (token) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3759E6342B3EA2BF00FB7AB5 /* YourAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3759E6332B3EA2BF00FB7AB5 /* YourAccountManager.m */; };
+		3759E6372B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3759E6362B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.m */; };
 		8D8D5B382B20E21E000BAAAC /* LSYBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5B2A2B20E21E000BAAAC /* LSYBaseRequest.m */; };
 		8D8D5B392B20E21E000BAAAC /* NSError+LSYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5B2B2B20E21E000BAAAC /* NSError+LSYNetworking.m */; };
 		8D8D5B3A2B20E21F000BAAAC /* LSYDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D5B2E2B20E21E000BAAAC /* LSYDownloadRequest.m */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3759E6322B3EA2BF00FB7AB5 /* YourAccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourAccountManager.h; sourceTree = "<group>"; };
+		3759E6332B3EA2BF00FB7AB5 /* YourAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourAccountManager.m; sourceTree = "<group>"; };
+		3759E6352B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXXTokenUpdateRequest.h; sourceTree = "<group>"; };
+		3759E6362B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXXTokenUpdateRequest.m; sourceTree = "<group>"; };
 		8D8D5B2A2B20E21E000BAAAC /* LSYBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYBaseRequest.m; sourceTree = "<group>"; };
 		8D8D5B2B2B20E21E000BAAAC /* NSError+LSYNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LSYNetworking.m"; sourceTree = "<group>"; };
 		8D8D5B2C2B20E21E000BAAAC /* LSYRequestDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYRequestDef.h; sourceTree = "<group>"; };
@@ -211,6 +217,10 @@
 				8DF3BC4528E57D91001F8247 /* YourBaseRequest.m */,
 				8DF3BC4728E57E1C001F8247 /* YourBaseResponse.h */,
 				8DF3BC4828E57E1C001F8247 /* YourBaseResponse.m */,
+				3759E6322B3EA2BF00FB7AB5 /* YourAccountManager.h */,
+				3759E6332B3EA2BF00FB7AB5 /* YourAccountManager.m */,
+				3759E6352B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.h */,
+				3759E6362B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.m */,
 				8DF3BC5028E5AAF5001F8247 /* XXXFriendInfoRequest.h */,
 				8DF3BC5128E5AAF5001F8247 /* XXXFriendInfoRequest.m */,
 				8DF3BC4D28E5AAE0001F8247 /* XXXFriendListRequest.h */,
@@ -414,12 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3759E6372B3EA4D900FB7AB5 /* XXXTokenUpdateRequest.m in Sources */,
 				8D8D5B3A2B20E21F000BAAAC /* LSYDownloadRequest.m in Sources */,
 				8D8D5B392B20E21E000BAAAC /* NSError+LSYNetworking.m in Sources */,
 				8DE3931128CB36F200C1FA90 /* ViewController.m in Sources */,
 				8DE3930B28CB36F200C1FA90 /* AppDelegate.m in Sources */,
 				8DE3931C28CB36F400C1FA90 /* main.m in Sources */,
 				8D8D5B3C2B20E21F000BAAAC /* LSYUploadRequest.m in Sources */,
+				3759E6342B3EA2BF00FB7AB5 /* YourAccountManager.m in Sources */,
 				8D8D5B3B2B20E21F000BAAAC /* LSYRequestUploadItem.m in Sources */,
 				8DF3BC5228E5AAF5001F8247 /* XXXFriendInfoRequest.m in Sources */,
 				8DF7A84B28E6872F00772D49 /* XXXFirendInfo.m in Sources */,

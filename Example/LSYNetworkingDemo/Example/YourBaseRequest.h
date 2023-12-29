@@ -9,6 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//请求次数太多需要进行身份验证的code
+extern NSInteger const LSYNetworkNeedAuthenticationErrorCode;
+//token过期code
+extern NSInteger const LSYNetworkTokenExpiredErrorCode;
+
 @interface YourBaseRequest : LSYBaseRequest
 
 //是否应该缓存数据

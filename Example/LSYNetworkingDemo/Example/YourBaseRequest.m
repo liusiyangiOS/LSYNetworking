@@ -9,6 +9,11 @@
 #import "YourBaseResponse.h"
 #import <YYModel/YYModel.h>
 #import "XMLDictionary.h"
+#import "YourAccountManager.h"
+#import "XXXTokenUpdateRequest.h"
+
+NSInteger const LSYNetworkNeedAuthenticationErrorCode = -200;
+NSInteger const LSYNetworkTokenExpiredErrorCode = -100;
 
 @implementation YourBaseRequest{
     //当前response是否是缓存
@@ -25,10 +30,14 @@
             @"userId":@"11111111111"
         }];
         //添加请求头
-        self.httpRequestHeaders = @{
+        NSMutableDictionary *headers = [NSMutableDictionary dictionaryWithDictionary:@{
             @"version":@"1.0.0",
             @"platform":@"iOS"
-        };
+        }];
+        if (YourAccountManager.token.length) {
+            [headers setObject:YourAccountManager.token forKey:@"token"];
+        }
+        self.httpRequestHeaders = headers.copy;
     }
     return self;
 }
@@ -119,12 +128,27 @@
     }
 }
 
-- (void)requestFailedWithError:(NSError *)error task:(nonnull NSURLSessionTask *)task successBlock:(LSYRequestSuccessBlock _Nullable)successBlock failureBlock:(LSYRequestFailBlock _Nullable)failureBlock{
+- (BOOL)requestFailedWithError:(NSError *)error task:(nonnull NSURLSessionTask *)task successBlock:(LSYRequestSuccessBlock _Nullable)successBlock failureBlock:(LSYRequestFailBlock _Nullable)failureBlock{
     //处理一些公共的错误
     if (error.isBusinessError) {
         //处理业务逻辑上的错误
+        if (error.code == LSYNetworkTokenExpiredErrorCode) {
+            //token过期
+            XXXTokenUpdateRequest *request = [[XXXTokenUpdateRequest alloc] init];
+            request.refreshToken = YourAccountManager.refreshToken;
+            [request startRequestWithSuccessBlock:^(NSString *responseData) {
+                //更新token
+                YourAccountManager.token = responseData;
+                NSMutableDictionary *headers = self.httpRequestHeaders.mutableCopy;
+                [headers setObject:responseData forKey:@"token"];
+                self.httpRequestHeaders = headers.copy;
+                //用新的token重新请求
+                [self startRequestWithSuccessBlock:successBlock failureBlock:failureBlock];
+            } failureBlock:failureBlock];
+            return NO;
+        }
     }else{
-        //处理其他错误
+        //处理其他错误(http错误)
     }
 
     //可以在这里实现一些debug功能,如网络请求信息记录,网络请求埋点等
@@ -132,6 +156,7 @@
     if (_showLoadingView) {
         //这里可以取消转菊花
     }
+    return YES;
 }
 
 @end

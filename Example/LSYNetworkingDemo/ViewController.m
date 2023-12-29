@@ -64,9 +64,10 @@
     XXXFriendInfoRequest *request = [[XXXFriendInfoRequest alloc] init];
     //属性会自动转换为请求参数
     request.friendId = _requestCount;
-    if (_requestCount > 6) {
+    if (_requestCount == 0) {
+        request.errorType = 2;
+    }else if (_requestCount > 6){
         request.errorType = 1;
-        _requestCount = 0;
     }
     [request startRequestWithSuccessBlock:^(XXXFirendInfo *responseData) {
         NSLog(@"Request success:%@",responseData);
@@ -82,6 +83,9 @@
     }];
     
     _requestCount ++;
+    if (_requestCount > 7) {
+        _requestCount = 0;
+    }
 }
 
 - (void)requestListButtonClicked{

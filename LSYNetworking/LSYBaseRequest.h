@@ -94,8 +94,9 @@ typedef NS_ENUM(NSUInteger, LSYResponseSerializerType) {
 /**
  请求失败回调,子类可以重写此方法来对错误进行统一的处理,主线程调用
  @param error 错误信息,调用[error extraInfo]可以获取服务器返回的错误信息(如果有的话)
+ @return 是否调用failureBlock,返回YES会按照正常流程回调,返回NO会截断block的回调,使用者可以自己实现逻辑并回调
  */
-- (void)requestFailedWithError:(NSError *)error task:(NSURLSessionTask *)task successBlock:(nullable LSYRequestSuccessBlock)successBlock failureBlock:(nullable LSYRequestFailBlock)failureBlock;
+- (BOOL)requestFailedWithError:(NSError *)error task:(NSURLSessionTask *)task successBlock:(nullable LSYRequestSuccessBlock)successBlock failureBlock:(nullable LSYRequestFailBlock)failureBlock;
 
 @end
 
