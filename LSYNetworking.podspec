@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LSYNetworking"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "LSYNetworking is a high level request util based on AFNetworking."
 
   s.homepage     = "https://github.com/liusiyangiOS/LSYNetworking"
