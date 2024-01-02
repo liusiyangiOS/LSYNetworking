@@ -65,26 +65,15 @@
 }
 
 - (instancetype)modelWithClass:(Class)resultClass json:(id)resultJson{
-    if ([resultClass isSubclassOfClass:NSDictionary.class] ||
-        [resultClass isSubclassOfClass:NSArray.class] ||
-        [resultClass isSubclassOfClass:NSString.class] ||
-        [resultClass isSubclassOfClass:NSNumber.class]) {
-        //如果resultClass是以上四种类型,则不需要转model,只有自定义模型需要转化
-        return resultJson;
-    }
     //这里可以根据你项目里使用的json转model的工具进行转化,我用的是YYModel
     return [resultClass yy_modelWithJSON:resultJson];
 }
 
 - (NSArray *)modelArrayWithClass:(Class)elementClass json:(id)resultJson{
-    //这里可以断言下类型是否匹配,或者可以做一下判断,如果不匹配,则直接返回resultJson/返回空
-    NSAssert([resultJson isKindOfClass:NSArray.class], @"Result class error,result json object is not a kind of NSArray!");
     return [NSArray yy_modelArrayWithClass:elementClass json:resultJson];
 }
 
 - (NSDictionary *)modelDictionaryWithClass:(Class)elementClass json:(id)resultJson{
-    //这里可以断言下类型是否匹配,或者可以做一下判断,如果不匹配,则直接返回resultJson/返回空
-    NSAssert([resultJson isKindOfClass:NSDictionary.class], @"Result class error,result json object is not a kind of NSDictionary!");
     return [NSDictionary yy_modelDictionaryWithClass:elementClass json:resultJson];
 }
 

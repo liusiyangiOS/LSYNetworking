@@ -7,6 +7,8 @@
 
 #import "LSYBaseRequest.h"
 
+NSInteger const LSYNetworkingDataParsingErrorCode = -10086;
+
 static dispatch_queue_t processing_queue(void) {
     static dispatch_queue_t request_processing_queue;
     static dispatch_once_t onceToken;
@@ -262,21 +264,11 @@ static dispatch_queue_t processing_queue(void) {
                     resultClass = [self resultClass];
                 }
                 if (resultClass) {
-                    Class elementClass = nil;
-                    if ([self respondsToSelector:@selector(elementClassIfResultIsCollection)]) {
-                        elementClass = [self elementClassIfResultIsCollection];
+                    NSError *error = nil;
+                    [self _handleResponse:handledResponse withResultClass:resultClass error:&error];
+                    if (error) {
+//                        NSLog(@"%@",error.localizedDescription);
                     }
-                    id result = handledResponse.result;
-                    if (elementClass) {
-                        if ([resultClass isSubclassOfClass:NSArray.class]) {
-                            result = [handledResponse modelArrayWithClass:elementClass json:result];
-                        }else if ([resultClass isSubclassOfClass:NSDictionary.class]){
-                            result = [handledResponse modelDictionaryWithClass:elementClass json:result];
-                        }
-                    }else{
-                        result = [handledResponse modelWithClass:resultClass json:result];
-                    }
-                    handledResponse.result = result;
                 }
             }
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -297,6 +289,69 @@ static dispatch_queue_t processing_queue(void) {
             });
         }
     });
+}
+
+- (void)_handleResponse:(id<LSYResponseProtocol>)response withResultClass:(Class)resultClass error:(NSError **)error{
+    id result = response.result;
+    Class elementClass = nil;
+    if ([self respondsToSelector:@selector(elementClassIfResultIsCollection)]) {
+        elementClass = [self elementClassIfResultIsCollection];
+    }
+    if (elementClass) {
+        if (![self _isCustomClass:elementClass]) {
+            //只有自定义模型需要转化model
+            return;
+        }
+        if ([resultClass isSubclassOfClass:NSArray.class]) {
+            if (![response respondsToSelector:@selector(modelArrayWithClass:json:)]) {
+                //未实现转换方法
+                return;
+            }
+            if ([result isKindOfClass:NSArray.class]) {
+                result = [response modelArrayWithClass:elementClass json:result];
+            }else{
+                *error = [NSError businessErrorWithCode:LSYNetworkingDataParsingErrorCode errorMsg:@"Data parsing error,result class specified as NSArray,but result json object is not a kind of NSArray!" extraInfo:response.result];
+                return;
+            }
+        }else if ([resultClass isSubclassOfClass:NSDictionary.class]){
+            if (![response respondsToSelector:@selector(modelDictionaryWithClass:json:)]) {
+                //未实现转换方法
+                return;
+            }
+            if ([result isKindOfClass:NSDictionary.class]) {
+                result = [response modelDictionaryWithClass:elementClass json:result];
+            }else{
+                *error = [NSError businessErrorWithCode:LSYNetworkingDataParsingErrorCode errorMsg:@"Data parsing error,result class specified as NSDictionary,but result json object is not a kind of NSDictionary!" extraInfo:response.result];
+                return;
+            }
+        }else{
+            *error = [NSError businessErrorWithCode:LSYNetworkingDataParsingErrorCode errorMsg:@"Data parsing error,result class must specified as NSArray or NSDictionary!" extraInfo:response.result];
+            return;
+        }
+    }else{
+        if (![self _isCustomClass:resultClass]) {
+            //只有自定义模型需要转化model
+            return;
+        }
+        if (![response respondsToSelector:@selector(modelWithClass:json:)]) {
+            //未实现转换方法
+            return;
+        }
+        result = [response modelWithClass:resultClass json:result];
+    }
+    if (result) {
+        response.result = result;
+    }
+}
+
+- (BOOL)_isCustomClass:(Class)clazz{
+    if ([clazz isSubclassOfClass:NSDictionary.class] ||
+        [clazz isSubclassOfClass:NSArray.class] ||
+        [clazz isSubclassOfClass:NSString.class] ||
+        [clazz isSubclassOfClass:NSNumber.class]) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)_handleError:(NSError *)error withToken:(NSString *)token successBlock:(_Nullable LSYRequestSuccessBlock)successBlock failureBlock:(LSYRequestFailBlock)failureBlock{

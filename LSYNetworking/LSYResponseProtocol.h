@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 请求是否成功 */
 - (BOOL)isRequestSuccess;
 
+@optional
+
 /**
  将resultJson转化为resultClass类型的实例
  @param resultClass response的result需要转换的模型类

@@ -15,6 +15,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//数据解析错误码
+extern NSInteger const LSYNetworkingDataParsingErrorCode;
+
 /** 请求的HTTPMethod */
 typedef NS_ENUM(NSUInteger, LSYRequestMethodType) {
     LSYRequestMethodTypePOST    = 0,
